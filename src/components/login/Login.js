@@ -45,6 +45,12 @@ function Login() {
   function getPassWord(val) {
     setPassWord(val.target.value);
   }
+  function handle(e) {
+    if (e.key === "Enter") {
+      action();
+    }
+    return false;
+  }
 
   return (
     <>
@@ -54,20 +60,35 @@ function Login() {
           <h1>Login</h1>
           <div className="email-container">
             <p>Username</p>
-            <form onSubmit={(event) => event.preventDefault()}>
+            <form
+              onSubmit={
+                (action,
+                (event) => {
+                  event.preventDefault();
+                })
+              }
+            >
               <input
                 type="text"
                 id="username-input"
                 placeholder="  username"
                 className="input"
                 onChange={getUserName}
+                onKeyDown={handle}
               />
               <FaUserAlt className="icon" />
             </form>
           </div>
           <div className="password-container">
             <p>Password</p>
-            <form onSubmit={(event) => event.preventDefault()}>
+            <form
+              onSubmit={
+                (action,
+                (event) => {
+                  event.preventDefault();
+                })
+              }
+            >
               <input
                 type="password"
                 id="password-input"
@@ -75,12 +96,13 @@ function Login() {
                 className="input"
                 value={passWord}
                 onChange={getPassWord}
+                onKeyDown={handle}
               />
               <FaLock className="icon" />
             </form>
           </div>
           <div className="options"></div>
-          <form onSubmit={(event) => event.preventDefault()}>
+          <form>
             <button onClick={action} id="login">
               Login
             </button>
