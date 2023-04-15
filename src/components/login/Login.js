@@ -2,36 +2,20 @@ import React from "react";
 import { useState } from "react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import "./Login.css";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Login() {
   const [userName, setUsername] = useState("");
   const [passWord, setPassWord] = useState("");
-
-  function output() {
-    console.log(userName);
-    console.log(passWord);
-    const data = {
-      username: userName,
-      password: passWord,
-    };
-    console.log(
-      "http://localhost:8080/user/login?username=" +
-        userName +
-        "&password=" +
-        passWord
-    );
-  }
-  function getUrl() {
-    return (
-      "http://localhost:8080/user/login?username=" +
-      userName +
-      "&password=" +
-      passWord
-    );
-  }
+  const navigate = useNavigate();
 
   function action() {
+    let params = new URLSearchParams("");
+    params.set("username", userName);
+    params.set("password", passWord);
+    let Url = "http://localhost:8080/user/login?" + params.toString();
+    console.log(Url);
+
     var raw = "";
 
     var requestOptions = {
@@ -40,63 +24,76 @@ function Login() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:8080/user/login" + getUrl, requestOptions)
-      .then((response) => response)
+    fetch(Url, requestOptions)
+      .then(function (response) {
+        if (response.status === 200) {
+          navigate("/");
+          console.log("Succes");
+          return response;
+        }
+        return response;
+      })
       .then(function (result) {
         console.log(result);
-        if (result === "OK") {
-          Navigate("/");
-        }
       })
       .catch((error) => console.log("error", error));
   }
 
+  function getUserName(val) {
+    setUsername(val.target.value);
+  }
+  function getPassWord(val) {
+    setPassWord(val.target.value);
+  }
+
   return (
-    <div className="login-component" id="login-component">
-      <h1>Login</h1>
-      <div className="email-container">
-        <p>Username</p>
-        <form>
-          <input
-            type="text"
-            id="username-input"
-            placeholder="username"
-            className="input"
-            value={userName}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <FaUserAlt className="icon" />
-        </form>
+    <>
+      <div className="main">
+        <div className="background"></div>
+        <div className="login-component " id="login-component">
+          <h1>Login</h1>
+          <div className="email-container">
+            <p>Username</p>
+            <form onSubmit={(event) => event.preventDefault()}>
+              <input
+                type="text"
+                id="username-input"
+                placeholder="  username"
+                className="input"
+                onChange={getUserName}
+              />
+              <FaUserAlt className="icon" />
+            </form>
+          </div>
+          <div className="password-container">
+            <p>Password</p>
+            <form onSubmit={(event) => event.preventDefault()}>
+              <input
+                type="password"
+                id="password-input"
+                placeholder="  password"
+                className="input"
+                value={passWord}
+                onChange={getPassWord}
+              />
+              <FaLock className="icon" />
+            </form>
+          </div>
+          <div className="options"></div>
+          <form onSubmit={(event) => event.preventDefault()}>
+            <button onClick={action} id="login">
+              Login
+            </button>
+          </form>
+          <div id="bottom">
+            Don't have an account?
+            <br />
+            <a href="/register">Register</a>
+            <span></span>
+          </div>
+        </div>
       </div>
-      <div className="password-container">
-        <p>Password</p>
-        <form>
-          <input
-            type="password"
-            id="password-input"
-            placeholder="password"
-            className="input"
-            value={passWord}
-            onChange={(e) => setPassWord(e.target.value)}
-          />
-          <FaLock className="icon" />
-        </form>
-      </div>
-      <div className="options"></div>
-      <form>
-        <button onClick={action} id="login">
-          Login
-        </button>
-      </form>
-      <div id="bottom">
-        Don't have an account?
-        <br />
-        <a href="/register">Register</a>
-        <span>
-          <button onClick={output}>output</button>
-        </span>
-      </div>
-    </div>
+    </>
   );
 }
 
