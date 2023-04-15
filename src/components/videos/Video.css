@@ -1,0 +1,69 @@
+.preview {
+  width: 200px;
+  height: 150px;
+  border-radius: 12px;
+}
+#output {
+  margin-top: 2%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: auto;
+}
+#pic {
+  width: 400px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(8, 8, 8, 0.2),
+    0 6px 20px 0 rgba(27, 27, 27, 0.19);
+}
+
+#component {
+  margin-left: 5px;
+  margin-right: 20px;
+}
+#bottom {
+  margin: 2px;
+}
+
+h1 {
+  margin: 2px;
+}
+#profile-pic {
+  width: 3rem;
+  height: 3rem;
+  image-rendering: optimizeQuality;
+}
+#profielpic {
+  align-items: flex-start;
+  float: left;
+  position: static;
+}
+#content {
+  margin-top: -15px;
+  float: left;
+  margin-left: 4rem;
+}
+a {
+  text-decoration: none;
+  color: rgba(240, 248, 255, 0);
+}
+#profile-pic {
+  border-radius: 8px;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(59, 59, 59, 0.2),
+    0 6px 20px 0 rgba(54, 54, 54, 0.19);
+}
+#mask {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  z-index: -1;
+  backdrop-filter: blur(30px);
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+  border-radius: 30px;
+}

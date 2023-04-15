@@ -1,0 +1,69 @@
+:root {
+  font-family: Arial;
+  background-color: #0d0c0f;
+  text-align: center;
+}
+
+.input {
+  background: transparent;
+  width: 20%;
+  height: 30px;
+  border-color: grey;
+  border-radius: 8px;
+  margin: 15px;
+}
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #ff5454, 0 0 2px 2px #ff5454, 0 0 2px 2px #ff5454;
+}
+#login {
+  height: 30px;
+  width: 20%;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(179, 66, 151, 1) 0%,
+    rgba(175, 35, 117, 1) 35%,
+    rgba(255, 0, 136, 1) 100%
+  );
+  color: aliceblue;
+  font-weight: bold;
+  font-size: larger;
+  transition: width 1s, height 1s, box-shadow 1s;
+  margin-top: 15px;
+}
+#password-input {
+  border: none;
+  background: #14161a;
+  color: aliceblue;
+}
+#username-input {
+  border: none;
+  background: #14161a;
+  color: aliceblue;
+}
+
+#login:hover {
+  width: 23%;
+  height: 40px;
+  box-shadow: 0 0 20px 5px rgba(175, 35, 117, 1),
+    0 0 20px 10px rgba(179, 66, 151, 1), 0 0 20px 5px rgba(255, 0, 136, 1);
+}
+.icon {
+  color: aliceblue;
+}
+h1 {
+  color: aliceblue;
+}
+p {
+  color: aliceblue;
+}
+#bottom {
+  margin-top: 20px;
+  color: aliceblue;
+}
+a {
+  text-decoration: underline;
+  color: rgb(255, 28, 247);
+}

@@ -1,0 +1,28 @@
+#input {
+  border: none;
+  background: #14161a;
+  color: aliceblue;
+}
+#submitBtn {
+  height: 30px;
+  width: 20%;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(179, 66, 151, 1) 0%,
+    rgba(175, 35, 117, 1) 35%,
+    rgba(255, 0, 136, 1) 100%
+  );
+  color: aliceblue;
+  font-weight: bold;
+  font-size: larger;
+  transition: width 1s, height 1s, box-shadow 1s;
+  margin-top: 15px;
+}
+#submitBtn:hover {
+  width: 23%;
+  height: 40px;
+  box-shadow: 0 0 20px 5px rgba(175, 35, 117, 1),
+    0 0 20px 10px rgba(179, 66, 151, 1), 0 0 20px 5px rgba(255, 0, 136, 1);
+}
