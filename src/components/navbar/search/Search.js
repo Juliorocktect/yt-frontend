@@ -10,12 +10,15 @@ import "./Search.css";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Search() {
-  const outputSearch = document.getElementById("output-search");
+  let sui = "";
   let text = "";
   const navigate = useNavigate();
   const location = useLocation();
   const [searchResult, setSearchResult] = useState("");
   const [profilePic, setProfilePic] = useState("");
+  const [PicAvailable, setPicIsAvailable] = useState("false");
+  const [currentUser, setCurrentUser] = useState("");
+
   function getSearch(text) {
     var requestOptions = {
       method: "GET",
@@ -36,7 +39,7 @@ function Search() {
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
-        let sui = "";
+
         result.forEach(function (video) {
           sui += `
           <a href="/player/${video.id}"> 
@@ -57,8 +60,8 @@ function Search() {
           </div>
           </a>
           `;
-          outputSearch.innerHTML = sui;
         });
+        document.getElementById("output-search").innerHTML = sui;
       })
       .catch((error) => console.log("error", error));
   }
@@ -81,8 +84,7 @@ function Search() {
     }
     return false;
   }
-  const [currentUser, setCurrentUser] = useState("");
-  const [isPicAvailable, setIsAvailable] = useState("false");
+
   useEffect(() => {
     var requestOptions = {
       method: "GET",
@@ -90,19 +92,21 @@ function Search() {
     };
 
     fetch("http://localhost:8080/user/getCurrentUser", requestOptions)
-      .then((response) => response)
+      .then((response) => response.json())
       .then((result) => {
         setCurrentUser(result);
-        setIsAvailable("true");
+        let picUrl = `
+        <img src="${currentUser.pictureUrl}" alt="" srcset="" id="propicpic"/>
+        <img src="${currentUser.pictureUrl}" alt="" srcset="" id="mask"/>`;
+        console.log(result);
+        document.getElementById("propic").innerHTML = picUrl;
+        setPicIsAvailable("true");
       })
       .catch((error) => console.log("error", error));
-    document.getElementById(
-      "propic"
-    ).innerHTML = `<img src="${currentUser.pictureUrl}" alt="" srcset="" className="propicpic" />`;
-  }, [isPicAvailable]);
+  }, [PicAvailable]);
 
   return (
-    <>
+    <div className="nav">
       <div className="search">
         <form
           action=""
@@ -153,9 +157,9 @@ function Search() {
           <BsBellFill className="inbox" />
         </button>
       </div>
-      <div className="porpic"></div>
+      <div className="propic" id="propic"></div>
       <div id="output-search"></div>
-    </>
+    </div>
   );
 }
 
