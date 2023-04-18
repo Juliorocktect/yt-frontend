@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import NavBar from "../navbar/NavBar";
 import { Navigate, useHref, useNavigate } from "react-router-dom";
 import "./Video.css";
 import Search from "../navbar/search/Search";
@@ -63,11 +64,8 @@ function Video() {
 
   return (
     <main>
-      <Search></Search>
-      <div
-        id="output"
-        //onClick={() => {navigate("/player/64245c89d489cb04f9b93af6");}}
-      ></div>
+      <NavBar />
+      <div id="output"></div>
     </main>
   );
 }

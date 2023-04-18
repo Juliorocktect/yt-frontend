@@ -1,5 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import {
+  BsFillInboxFill,
+  BsBellFill,
+  BsFillPersonFill,
+  BsFillCloudUploadFill,
+} from "react-icons/bs";
 import "./Search.css";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -9,7 +15,6 @@ function Search() {
   const location = useLocation();
   const [searchResult, setSearchResult] = useState("");
   const [profilePic, setProfilePic] = useState("");
-
   function getSearch(text) {
     var requestOptions = {
       method: "GET",
@@ -30,9 +35,9 @@ function Search() {
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
-        let output = "";
+        let sui = "";
         result.forEach(function (video) {
-          output += `
+          sui += `
           <a href="/player/${video.id}"> 
             <div id="component">
             <div id="pic">
@@ -51,7 +56,7 @@ function Search() {
           </div>
           </a>
           `;
-          document.getElementById("output").innerHTML = output;
+          document.getElementById("output-search").innerHTML = sui;
         });
       })
       .catch((error) => console.log("error", error));
@@ -75,6 +80,25 @@ function Search() {
     }
     return false;
   }
+  const [currentUser, setCurrentUser] = useState("");
+  const [isPicAvailable, setIsAvailable] = useState("false");
+  useEffect(() => {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:8080/user/getCurrentUser", requestOptions)
+      .then((response) => response)
+      .then((result) => {
+        setCurrentUser(result);
+        setIsAvailable("true");
+      })
+      .catch((error) => console.log("error", error));
+    document.getElementById(
+      "propic"
+    ).innerHTML = `<img src="${currentUser.pictureUrl}" alt="" srcset="" className="propicpic" />`;
+  }, [isPicAvailable]);
 
   return (
     <>
@@ -87,14 +111,49 @@ function Search() {
           <input
             type="text"
             placeholder="Search"
-            className="search-input"
+            className="search-input "
             onChange={getData}
             onKeyDown={handle}
           />
           <FaSearch className="search-icon" onClick={getSearch} />
         </form>
       </div>
-      <div id="output"></div>
+      <div className="btn-container">
+        <button
+          onClick={() => {
+            navigate("/upload");
+          }}
+          className="upload from-left"
+        >
+          <BsFillCloudUploadFill className="inbox" />
+        </button>
+        <button
+          onClick={() => {
+            navigate("/login");
+          }}
+          className="login-btn from-left"
+        >
+          <BsFillPersonFill className="inbox" />
+        </button>
+        <button
+          onClick={() => {
+            navigate("/login");
+          }}
+          className="login-btn from-left"
+        >
+          <BsFillInboxFill className="inbox" />
+        </button>
+        <button
+          onClick={() => {
+            navigate("/login");
+          }}
+          className="login-btn from-left"
+        >
+          <BsBellFill className="inbox" />
+        </button>
+      </div>
+      <div className="porpic"></div>
+      <div id="output-search"></div>
     </>
   );
 }

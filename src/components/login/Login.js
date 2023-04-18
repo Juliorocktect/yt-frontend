@@ -51,10 +51,13 @@ function Login() {
     }
     return false;
   }
+  const blob = document.getElementById("blob");
 
   return (
     <>
       <div className="main">
+        <div id="blob"></div>
+        <div id="blur"></div>
         <div className="background"></div>
         <div className="login-component " id="login-component">
           <h1>Login</h1>

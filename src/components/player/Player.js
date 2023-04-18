@@ -21,8 +21,7 @@ function Player() {
       redirect: "follow",
     };
 
-    let output = "";
-    var i = 0;
+    let commentOutput = "";
 
     fetch("http://localhost:8080/getVideoPerId/" + id.id, requestOptions)
       .then((response) => response.json())
@@ -31,15 +30,13 @@ function Player() {
         setVideo(result);
         setVideoAvailable("true");
         setComments(video.comments);
-        console.log(comments);
         document.getElementById("likes").innerHTML = video.likes;
         document.getElementById("video-title").innerHTML = video.title;
-        comments.forEach((comment) => {
-          console.log(comment);
-        });
-        document.getElementById("comment-section").innerHTML = output;
       })
       .catch((error) => console.log("error", error));
+    for (let i = 0; i > 26; i++) {
+      console.log(comments[i]);
+    }
 
     fetch(
       "http://localhost:8080/user/getProfilePicture/642470a2e5b043025ec8676d",

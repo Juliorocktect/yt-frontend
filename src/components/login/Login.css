@@ -74,15 +74,57 @@ a {
   width: 100%;
 }
 .background {
-  background-image: url("http://localhost/blob-scene-haikei.svg");
+  background-image: url("http://localhost/blob-scene-haikei%20(1).svg");
   background-size: cover;
   width: 100%;
   height: 100vh;
   background-position: center;
-  filter: blur(18px);
-  -webkit-filter: blur(18px);
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  position: relative;
 }
 .main {
   box-sizing: border-box;
   justify-content: center;
+  overflow: hidden;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+#blob {
+  display: none;
+  background-color: white;
+  height: 34vmax;
+  aspect-ratio: 1;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgb(227, 127, 255), rgb(216, 143, 112));
+  animation: rotate 20s infinite;
+  opacity: 0.8;
+  backdrop-filter: blur(12vmax);
+  filter: blur(12vmax);
+}
+
+#blur {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  backdrop-filter: blur(12vmax);
+  filter: blur(12vmax);
 }
