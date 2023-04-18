@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 
 function Upload() {
@@ -6,11 +6,12 @@ function Upload() {
   const [title, setTitle] = useState("");
   const [descrition, setDescritpion] = useState("");
   const [userId, setUserId] = useState("");
+  const [videoId, setVideoId] = useState("");
 
-  const onSubmit = async (data) => {
+  const sendFile = async (data) => {
     const formData = new FormData();
     formData.append("file", data.file[0]);
-    formData.append("id", "64245c89d489cb04f9b93af6");
+    formData.append("id", videoId);
 
     const res = await fetch("http://localhost:8080/uploadVideo", {
       method: "POST",
@@ -18,20 +19,70 @@ function Upload() {
     }).then((res) => res.json());
     alert(JSON.stringify(`${res.message}, status: ${res.status}`));
   };
-  function getTitle(val) {
-    setTitle(val.traget.value);
+  function createVideo() {
+    var requestOptions = {
+      method: "POST",
+      redirect: "follow",
+    };
+    let params = new URLSearchParams("");
+    params.set("title", title);
+    params.set("description", descrition);
+    params.set("userId", userId);
+    let Url = "http://localhost:8080/createNewVideo?" + params.toString();
+
+    fetch(Url, requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        setVideoId(result);
+        console.log(videoId);
+      })
+      .catch((error) => console.log("error", error));
+  }
+
+  function action() {
+    createVideo();
+    sendFile();
   }
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(action)}>
         <input type="file" {...register("file")} />
         <input type="submit" />
+      </form>
+      <form
+        onSubmit={
+          (action,
+          (event) => {
+            event.preventDefault();
+          })
+        }
+      >
         <input
           type="text"
           id="username-input"
-          placeholder="  username"
+          placeholder="  picture url"
           className="input"
-          onChange={getTitle}
+          onChange={(val) => {
+            setTitle(val.target.value);
+          }}
+        />
+        <input
+          type="text"
+          id="username-input"
+          placeholder="  description"
+          className="input"
+          onChange={(val) => {
+            setDescritpion(val.target.value);
+          }}
+        />
+        <input
+          type="text"
+          id="username-input"
+          placeholder="  userId"
+          className="input"
+          onChange={(val) => {
+            setUserId(val.target.value);
+          }}
         />
       </form>
     </>
