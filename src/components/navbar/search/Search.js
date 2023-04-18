@@ -10,6 +10,7 @@ import "./Search.css";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Search() {
+  const outputSearch = document.getElementById("output-search");
   let text = "";
   const navigate = useNavigate();
   const location = useLocation();
@@ -56,7 +57,7 @@ function Search() {
           </div>
           </a>
           `;
-          document.getElementById("output-search").innerHTML = sui;
+          outputSearch.innerHTML = sui;
         });
       })
       .catch((error) => console.log("error", error));

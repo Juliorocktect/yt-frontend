@@ -13,14 +13,15 @@ function Player() {
   const [video, setVideo] = useState("");
   const [profile, setProfile] = useState("");
   const id = useParams();
-  const videoUrl = "http://localhost:8080/video/" + id.id;
+  var videoUrl = "http://localhost:8080/video/" + id.id;
 
   useEffect(() => {
     var requestOptions = {
       method: "GET",
       redirect: "follow",
     };
-
+    console.log(videoUrl);
+    document.getElementById("vid").innerHTML = `<source src="${videoUrl}"/>`;
     let commentOutput = "";
 
     fetch("http://localhost:8080/getVideoPerId/" + id.id, requestOptions)
@@ -67,9 +68,10 @@ function Player() {
       })
       .catch((error) => console.log("error", error));
   }
+
   return (
     <div className="body">
-      <VideoPlayer className="vid-player"></VideoPlayer>
+      <VideoPlayer></VideoPlayer>
       <div className="title-container">
         <div className="title-container-container">
           <h1 id="video-title"></h1>

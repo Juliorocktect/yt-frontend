@@ -10,18 +10,16 @@ import { useRef } from "react";
 import "./VideoPlayer.css";
 
 function VideoPlayer({ videoUrl }) {
+  var video = useState("");
+
+  function setVideo() {
+    video = document.querySelector("my-video");
+    console.log(videoUrl);
+    video.innerHTML = `<source src="${videoUrl}" type="video" />;`;
+  }
   return (
-    <div className="app">
-      <video
-        id="my-video"
-        className="video-js"
-        controls
-        autoPlay
-        preload="auto"
-        //poster=""
-        data-setup="{}"
-      >
-        <source src="http://localhost/Navbar-Tutorial.mov" />
+    <div className="app" id="player">
+      <video controls autoPlay id="vid">
         <p class="vjs-no-js">
           To view this video please enable JavaScript, and consider upgrading to
           a web browser that

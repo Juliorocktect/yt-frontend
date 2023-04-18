@@ -6,6 +6,7 @@ import Register from "./components/register/Register";
 import Player from "./components/player/Player";
 import { Routes, Route } from "react-router-dom";
 import Search from "./components/navbar/search/Search";
+import Upload from "./components/upload/Upload";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/player/:id" exact element={<Player />}></Route>
         <Route path="/search" element={<Search />}></Route>
+        <Route path="/upload" element={<Upload />}></Route>
       </Routes>
     </div>
   );

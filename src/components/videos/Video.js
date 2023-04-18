@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../navbar/NavBar";
 import { Navigate, useHref, useNavigate } from "react-router-dom";
 import "./Video.css";
-import Search from "../navbar/search/Search";
 
 function Video() {
   const [videos, setVideos] = useState(null);
