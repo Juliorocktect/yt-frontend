@@ -60,7 +60,7 @@ function Upload() {
         <input
           type="text"
           id="username-input"
-          placeholder="  picture url"
+          placeholder="  title"
           className="input"
           onChange={(val) => {
             setTitle(val.target.value);

@@ -73,6 +73,7 @@ function Register() {
     params.set("userName", userName);
     params.set("pictureUrl", pictureUrl);
     params.set("passWord", password);
+    params.set("bannerUrl", "pihasdipuhasd");
     let Url = "http://localhost:8080/user/create?" + params.toString();
 
     var requestOptions = {
@@ -83,7 +84,7 @@ function Register() {
     fetch(Url, requestOptions)
       .then((response) => {
         console.log(response);
-        if (response.status === 200) {
+        if (response.status == 200) {
           navigate("/");
         }
         return response.text();

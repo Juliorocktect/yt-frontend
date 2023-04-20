@@ -39,7 +39,10 @@ function Search() {
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
-
+        setSearchResult(result);
+        if (searchResult[0] == null) {
+          alert("No search results");
+        }
         result.forEach(function (video) {
           sui += `
           <a href="/player/${video.id}"> 

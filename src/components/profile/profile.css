@@ -1,0 +1,83 @@
+.profile {
+  width: 100%;
+  height: auto;
+}
+.banner-container {
+  width: 100%;
+  height: 30vh;
+}
+.banner-img {
+  width: 90%;
+  object-fit: cover;
+  height: 100%;
+  margin-top: 4%;
+  border-radius: 20px;
+}
+.profile-container {
+  width: 90%px;
+  display: flex;
+  height: 42px;
+  flex-direction: row;
+  display: flex;
+  margin-top: 8%;
+}
+.name {
+  justify-content: flex-start;
+  display: flex;
+}
+.user-image {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 15px;
+  position: relative;
+  align-self: flex-start;
+}
+.inf {
+  margin-left: 10%;
+}
+.subscribers {
+  font-size: x-small;
+  margin-top: 1%;
+}
+.user-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  margin-right: 70%;
+  margin-left: 5%;
+}
+
+.subscribe-field {
+  background: #ff5454;
+  box-shadow: 0px 4px 4px rgba(20, 20, 20, 0.25);
+  border-radius: 12px;
+  color: #fff;
+  border: none;
+  width: 200px;
+  height: 42px;
+  margin-right: 5%;
+  font-size: larger;
+}
+.list-item {
+  color: #dddddd;
+  text-decoration: underline;
+  list-style-type: none;
+  cursor: pointer;
+  font-size: xx-large;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 5%;
+}
+ul {
+  display: flex;
+  width: 30%;
+  overflow: hidden;
+}
+.naviagtion-container {
+  width: 100%;
+}
+.active-list {
+  color: #ff5454;
+}

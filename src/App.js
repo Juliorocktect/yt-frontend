@@ -7,6 +7,7 @@ import Player from "./components/player/Player";
 import { Routes, Route } from "react-router-dom";
 import Search from "./components/navbar/search/Search";
 import Upload from "./components/upload/Upload";
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/player/:id" exact element={<Player />}></Route>
         <Route path="/search" element={<Search />}></Route>
         <Route path="/upload" element={<Upload />}></Route>
+        <Route path="/profile/:userName" element={<Profile />}></Route>
       </Routes>
     </div>
   );
