@@ -61,7 +61,7 @@ function Player() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:8080/like/" + id.id, requestOptions)
+    fetch("http://localhost:8080/like?id=" + id.id, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         setProfile(result);

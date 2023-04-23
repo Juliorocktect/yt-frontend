@@ -14,7 +14,6 @@ function Profile() {
         />
       </div>
       <div className="profile-container">
-        <div className="background-mask"></div>
         <div className="user-container">
           <div className="name">
             <img

@@ -153,17 +153,8 @@ ul {
   }
   .subscribe-field {
     margin-right: 5%;
-    position: absolut;
   }
   .user-container {
-    position: absolute;
     z-index: 1;
-  }
-  .background-mask {
-    position: relative;
-    width: 95%;
-    background-color: rgba(0, 0, 0, 0.786);
-    margin-left: 5%;
-    filter: blur(10px);
   }
 }
