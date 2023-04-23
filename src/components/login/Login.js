@@ -23,7 +23,6 @@ function Login() {
       body: raw,
       redirect: "follow",
     };
-
     fetch(Url, requestOptions)
       .then(function (response) {
         if (response.status === 200) {

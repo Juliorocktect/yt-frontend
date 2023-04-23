@@ -6,6 +6,7 @@ import {
   BsFillPersonFill,
   BsFillCloudUploadFill,
 } from "react-icons/bs";
+import { AiOutlineMenu } from "react-icons/ai";
 import "./Search.css";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -109,60 +110,66 @@ function Search() {
   }, [PicAvailable]);
 
   return (
-    <div className="nav">
-      <div className="search">
-        <form
-          action=""
-          className="form"
-          onSubmit={(event) => event.preventDefault()}
-        >
-          <input
-            type="text"
-            placeholder="Search"
-            className="search-input "
-            onChange={getData}
-            onKeyDown={handle}
-          />
-          <FaSearch className="search-icon" onClick={getSearch} />
-        </form>
-      </div>
-      <div className="btn-container">
-        <button
-          onClick={() => {
-            navigate("/upload");
-          }}
-          className="upload from-left"
-        >
-          <BsFillCloudUploadFill className="inbox" />
-        </button>
-        <button
-          onClick={() => {
-            navigate("/login");
-          }}
-          className="login-btn from-left"
-        >
-          <BsFillPersonFill className="inbox" />
-        </button>
-        <button
-          onClick={() => {
-            navigate("/login");
-          }}
-          className="login-btn from-left"
-        >
-          <BsFillInboxFill className="inbox" />
-        </button>
-        <button
-          onClick={() => {
-            navigate("/login");
-          }}
-          className="login-btn from-left"
-        >
-          <BsBellFill className="inbox" />
-        </button>
+    <>
+      <div className="nav">
+        <div className="logo">
+          <h1 className="logo">logo</h1>
+        </div>
+        <div className="search">
+          <form
+            action=""
+            className="form"
+            onSubmit={(event) => event.preventDefault()}
+          >
+            <input
+              type="text"
+              placeholder="Search"
+              className="search-input "
+              onChange={getData}
+              onKeyDown={handle}
+            />
+            <FaSearch className="search-icon" onClick={getSearch} />
+          </form>
+        </div>
+        <div className="btn-container">
+          <button
+            onClick={() => {
+              navigate("/upload");
+            }}
+            className="upload from-left"
+          >
+            <BsFillCloudUploadFill className="inbox" />
+          </button>
+          <button
+            onClick={() => {
+              navigate("/login");
+            }}
+            className="login-btn from-left"
+          >
+            <BsFillPersonFill className="inbox" />
+          </button>
+          <button
+            onClick={() => {
+              navigate("/login");
+            }}
+            className="login-btn from-left"
+          >
+            <BsFillInboxFill className="inbox" />
+          </button>
+          <button
+            onClick={() => {
+              navigate("/login");
+            }}
+            className="login-btn from-left"
+          >
+            <BsBellFill className="inbox" />
+          </button>
+        </div>
+        <AiOutlineMenu className="menu-hamburger" />
       </div>
       <div className="propic" id="propic"></div>
       <div id="output-search"></div>
-    </div>
+    </>
   );
 }
 

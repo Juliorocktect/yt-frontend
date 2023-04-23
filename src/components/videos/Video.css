@@ -67,3 +67,6 @@ a {
   -webkit-filter: blur(30px);
   border-radius: 30px;
 }
+@media screen and (max-width: 600px) {
+  
+}

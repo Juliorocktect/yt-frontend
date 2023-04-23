@@ -1,5 +1,5 @@
 .search-input {
-  width: 90%;
+  width: 93%;
   height: 100%;
   justify-content: flex-start;
   float: left;
@@ -18,8 +18,7 @@
   border: 1px solid #ffffff;
   position: relative;
   border-radius: 17px;
-  margin-top: 20px;
-  margin-left: 15%;
+  margin-top: 10px;
 }
 .search-icon {
   color: aliceblue;
@@ -44,14 +43,12 @@
   flex: auto;
 }
 .upload {
-  top: -40px;
   position: relative;
   background: none;
   border: none;
   color: aliceblue;
 }
 .login-btn {
-  top: -40px;
   position: relative;
   background: none;
   border: none;
@@ -77,9 +74,13 @@
   transform: translateY(-3px);
 }
 .btn-container {
+  justify-content: flex-end;
   display: flex;
-  justify-content: space-evenly;
-  margin-right: 4%;
+  right: 0;
+  margin-top: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 15%;
 }
 .inbox {
   width: 60%;
@@ -88,22 +89,29 @@
 .from-left:focus {
   transform: scale(0.8);
 }
+.nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 62px;
+  justify-content: space-evenly;
+}
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   background-color: #333;
   color: #fff;
+  justify-content: space-between;
 }
 .logo a {
+  margin-top: 20px;
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
   color: #fff;
-}
-.menu-toggle {
-  display: none;
 }
 #propicpic {
   object-fit: cover;
@@ -120,8 +128,28 @@ nav {
   width: 3rem;
   height: 3rem;
   z-index: -1;
-  backdrop-filter: blur(30px);
   filter: blur(30px);
   -webkit-filter: blur(30px);
   border-radius: 30px;
+}
+.menu-hamburger {
+  opacity: 0;
+  color: #fff;
+}
+@media screen and (max-width: 750px) {
+  .search {
+    opacity: 0;
+  }
+  .btn-container {
+    opacity: 0;
+  }
+  .menu-hamburger {
+    opacity: 1;
+    color: aliceblue;
+    justify-content: flex-end;
+    margin-right: 2%;
+    margin-top: 10px;
+    height: 42px;
+    width: 42px;
+  }
 }
