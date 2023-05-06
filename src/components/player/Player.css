@@ -2,13 +2,14 @@
   cursor: pointer;
   border: none;
   background: none;
-  background-color: #ff5454;
+  background-color: #0e0e0e;
   color: aliceblue;
-  border-radius: 8px;
-  width: 100px;
-  height: 30px;
+  border-radius: 15px;
+  width: 160px;
+  height: 60px;
   font-size: large;
   font-weight: 300;
+  border: 1px solid #ff5454;
 }
 .like-icon {
   color: #ff5454;
@@ -33,13 +34,15 @@
   height: auto;
 }
 .title-container {
-  display: flexbox;
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-top: 4%;
+  width: 70%;
 }
 .container {
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
 }
 .title-container-container {
   justify-content: flex-start;
@@ -51,4 +54,39 @@
 .likes {
   display: flex;
   flex-direction: row-reverse;
+}
+.UserContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  margin-top: 2%;
+}
+#profile-picture {
+  height: 60px;
+  width: 60px;
+  border-radius: 12px;
+}
+.recomandation-section {
+  margin-left: 75%;
+  position: absolute;
+  margin-top: 1%;
+}
+.video-element {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 750px) {
+  .recomandation-section {
+    display: none;
+  }
+  .player {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1800px) {
+  #pic {
+    width: 250px;
+    height: 150px;
+  }
 }

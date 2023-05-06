@@ -14,7 +14,7 @@
   flex: auto;
 }
 #pic {
-  width: 400px;
+  width: 450px;
   height: 250px;
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(8, 8, 8, 0.2),
@@ -68,5 +68,4 @@ a {
   border-radius: 30px;
 }
 @media screen and (max-width: 600px) {
-  
 }

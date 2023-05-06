@@ -8,7 +8,7 @@ function Profile() {
       <NavBar></NavBar>
       <div className="banner-container">
         <img
-          src="http://localhost/images/cristina-gottardi-CSpjU6hYo_0-unsplash%20(1).jpg"
+          src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
           alt=""
           className="banner-img"
         />
@@ -17,7 +17,7 @@ function Profile() {
         <div className="user-container">
           <div className="name">
             <img
-              src="http://localhost/images/kellen-riggin-U-Xa6K3Rfxk-unsplash.jpg"
+              src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
               alt=""
               className="user-image"
             />
@@ -41,7 +41,7 @@ function Profile() {
       <div className="preview-video">
         <div className="pre-image-container">
           <img
-            src="http://localhost/images/kellen-riggin-U-Xa6K3Rfxk-unsplash.jpg"
+            src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
             alt="best video"
             className="best-video"
           />

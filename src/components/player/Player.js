@@ -48,11 +48,13 @@ function Player() {
         console.log(result);
         setProfile(result);
         setIsProfileAvailable("true");
-        document.getElementById(
-          "user-pic"
-        ).innerHTML = `<img id="profile-pic" src='${profile}' alt="profile-pic"/>`;
       })
       .catch((error) => console.log("error", error));
+    if (isProfileAvailable) {
+      document.getElementById(
+        "user-pic"
+      ).innerHTML = `<img id="profile-picture" src='${profile}' alt="profile-pic"/>`;
+    }
   }, [isVideoAvailable, isProfileAvailable]);
 
   function like() {
@@ -71,7 +73,137 @@ function Player() {
 
   return (
     <div className="body">
-      <VideoPlayer></VideoPlayer>
+      <div className="recomandation-section">
+        <div className="video-element">
+          <a href="/player/asd">
+            <div id="component">
+              <div id="pic">
+                <img
+                  id="pic"
+                  src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
+                  alt="thumbnail-preview"
+                  className="preview"
+                />
+              </div>
+              <div id="bottom">
+                <div id="profielpic">
+                  <img
+                    src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
+                    alt="pic"
+                    id="profile-pic"
+                  />
+                  <img
+                    src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
+                    alt="pic"
+                    id="mask"
+                  />
+                </div>
+                <div id="content">
+                  <h1>Titel</h1>
+                  <p>Beschreibung</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div className="video-element">
+          <a href="/player/asd">
+            <div id="component">
+              <div id="pic">
+                <img
+                  id="pic"
+                  src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
+                  alt="thumbnail-preview"
+                  className="preview"
+                />
+              </div>
+              <div id="bottom">
+                <div id="profielpic">
+                  <img
+                    src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
+                    alt="pic"
+                    id="profile-pic"
+                  />
+                  <img
+                    src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
+                    alt="pic"
+                    id="mask"
+                  />
+                </div>
+                <div id="content">
+                  <h1>Titel</h1>
+                  <p>Beschreibung</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div className="video-element">
+          <a href="/player/asd">
+            <div id="component">
+              <div id="pic">
+                <img
+                  id="pic"
+                  src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
+                  alt="thumbnail-preview"
+                  className="preview"
+                />
+              </div>
+              <div id="bottom">
+                <div id="profielpic">
+                  <img
+                    src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
+                    alt="pic"
+                    id="profile-pic"
+                  />
+                  <img
+                    src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
+                    alt="pic"
+                    id="mask"
+                  />
+                </div>
+                <div id="content">
+                  <h1>Titel</h1>
+                  <p>Beschreibung</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div className="video-element">
+          <a href="/player/asd">
+            <div id="component">
+              <div id="pic">
+                <img
+                  id="pic"
+                  src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
+                  alt="thumbnail-preview"
+                  className="preview"
+                />
+              </div>
+              <div id="bottom">
+                <div id="profielpic">
+                  <img
+                    src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
+                    alt="pic"
+                    id="profile-pic"
+                  />
+                  <img
+                    src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
+                    alt="pic"
+                    id="mask"
+                  />
+                </div>
+                <div id="content">
+                  <h1>Titel</h1>
+                  <p>Beschreibung</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <VideoPlayer className="player"></VideoPlayer>
       <div className="title-container">
         <div className="title-container-container">
           <h1 id="video-title"></h1>
@@ -88,13 +220,11 @@ function Player() {
         </div>
       </div>
       <div className="UserContainer">
-        <button onClick={like} className="like-btn">
-          <MdThumbUpAlt className="icon" />
-        </button>
         <div id="user-pic" className="user-pic"></div>
         <div className="UserName"></div>
         <button className="subscribe-button">Subscribe</button>
       </div>
+
       <div className="comment-section">
         <div className="comment">
           <div className="user-img"></div>
