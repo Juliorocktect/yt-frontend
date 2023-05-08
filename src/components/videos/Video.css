@@ -11,24 +11,37 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  flex: auto;
+  align-items: center;
 }
 #pic {
-  width: 450px;
-  height: 250px;
+  height: 200px;
+  width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(8, 8, 8, 0.2),
     0 6px 20px 0 rgba(27, 27, 27, 0.19);
+  object-fit: cover;
 }
-
+#link {
+  margin-top: 1rem;
+}
 #component {
-  margin-left: 5px;
-  margin-right: 20px;
+  margin-top: 1rem;
+  object-fit: cover;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 #bottom {
   margin: 2px;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
 }
-
+img {
+  object-fit: cover;
+}
 h1 {
   margin: 2px;
 }
@@ -36,6 +49,7 @@ h1 {
   width: 3rem;
   height: 3rem;
   image-rendering: optimizeQuality;
+  justify-content: flex-start;
 }
 #profielpic {
   align-items: flex-start;
@@ -45,7 +59,7 @@ h1 {
 #content {
   margin-top: -15px;
   float: left;
-  margin-left: 4rem;
+  margin-left: 1rem;
 }
 a {
   text-decoration: none;

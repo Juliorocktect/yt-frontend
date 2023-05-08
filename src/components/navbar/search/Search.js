@@ -108,65 +108,78 @@ function Search() {
       })
       .catch((error) => console.log("error", error));
   }, [PicAvailable]);
-
+  function navigateSearch() {
+    navigate("/search");
+  }
   return (
     <>
       <div className="nav">
         <div className="logo">
           <h1 className="logo">logo</h1>
         </div>
-        <div className="search">
-          <form
-            action=""
-            className="form"
-            onSubmit={(event) => event.preventDefault()}
-          >
-            <input
-              type="text"
-              placeholder="Search"
-              className="search-input "
-              onChange={getData}
-              onKeyDown={handle}
-            />
-            <FaSearch className="search-icon" onClick={getSearch} />
-          </form>
+        <div className="button-container">
+          <div className="search">
+            <form className="form" onSubmit={(event) => event.preventDefault()}>
+              <input
+                type="text"
+                placeholder="Search"
+                className="search-input "
+                onChange={getData}
+                onKeyDown={handle}
+              />
+              <FaSearch className="search-icon" onClick={navigateSearch} />
+            </form>
+          </div>
+          <div className="btn-container">
+            <button
+              onClick={() => {
+                navigate("/upload");
+              }}
+              className="upload from-left"
+            >
+              <BsFillCloudUploadFill className="inbox" />
+            </button>
+            <button
+              onClick={() => {
+                navigate("/login");
+              }}
+              className="login-btn from-left"
+            >
+              <BsFillPersonFill className="inbox" />
+            </button>
+            <button
+              onClick={() => {
+                navigate("/login");
+              }}
+              className="login-btn from-left"
+            >
+              <BsFillInboxFill className="inbox" />
+            </button>
+            <button
+              onClick={() => {
+                navigate("/login");
+              }}
+              className="login-btn from-left"
+            >
+              <BsBellFill className="inbox" />
+            </button>
+          </div>
+          <AiOutlineMenu className="menu-hamburger" />
         </div>
-        <div className="btn-container">
-          <button
-            onClick={() => {
-              navigate("/upload");
-            }}
-            className="upload from-left"
-          >
-            <BsFillCloudUploadFill className="inbox" />
-          </button>
-          <button
-            onClick={() => {
-              navigate("/login");
-            }}
-            className="login-btn from-left"
-          >
-            <BsFillPersonFill className="inbox" />
-          </button>
-          <button
-            onClick={() => {
-              navigate("/login");
-            }}
-            className="login-btn from-left"
-          >
-            <BsFillInboxFill className="inbox" />
-          </button>
-          <button
-            onClick={() => {
-              navigate("/login");
-            }}
-            className="login-btn from-left"
-          >
-            <BsBellFill className="inbox" />
-          </button>
-        </div>
-        <AiOutlineMenu className="menu-hamburger" />
       </div>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
+      >
+        <input
+          type="text"
+          className="search-mobile-input"
+          placeholder="  Search"
+          onChange={getData}
+          onKeyDown={handle}
+        />
+      </form>
       <div className="propic" id="propic"></div>
       <div id="output-search"></div>
     </>

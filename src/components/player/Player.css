@@ -91,6 +91,9 @@
   justify-content: flex-end;
   flex-wrap: wrap;
 }
+img {
+  object-fit: cover;
+}
 #player {
   width: 99%;
 }
@@ -106,6 +109,9 @@
   #player {
     width: 100%;
     margin-top: 1%;
+  }
+  #vid {
+    margin: 0;
   }
 }
 @media screen and (max-width: 1800px) {

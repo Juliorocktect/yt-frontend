@@ -28,7 +28,7 @@ function Video() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:8080/getTenVideos", requestOptions)
+    fetch("http://192.168.178.95:8080/getTenVideos", requestOptions)
       .then((response) => response.json())
       .then(function (result) {
         console.log(result);
@@ -37,7 +37,7 @@ function Video() {
         let output = "";
         result.forEach(function (video) {
           output += `
-          <a href="/player/${video.id}"> 
+          <a id="link" href="/player/${video.id}"> 
             <div id="component">
             <div id="pic">
               <img id="pic" src="${video.thumbnailUrl}" alt="thumbnail-preview" className="preview" />
@@ -49,7 +49,7 @@ function Video() {
               </div>
                 <div id='content' onClick={navigateToPlayer(${video.id})}>
                   <h1>${video.title}</h1>
-                  <p>${video.description}</p>
+                  <div>${video.description}</div>
                 </div>
             </div>
           </div>
