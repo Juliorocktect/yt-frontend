@@ -37,25 +37,44 @@ function Video() {
         let output = "";
         result.forEach(function (video) {
           output += `
-          <a id="link" href="/player/${video.id}"> 
-            <div id="component">
-            <div id="pic">
-              <img id="pic" src="${video.thumbnailUrl}" alt="thumbnail-preview" className="preview" />
-            </div>
-            <div id="bottom">
-              <div id="profielpic">
-                <img  src="${profilePic}" alt="pic" id='profile-pic'/>
-                <img  src="${profilePic}" alt="pic" id='mask' />
-              </div>
-                <div id='content' onClick={navigateToPlayer(${video.id})}>
-                  <h1>${video.title}</h1>
-                  <div>${video.description}</div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="${video.likes}">
+              <img
+                src="${video.thumbnailUrl}"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  ${video.title}
+                </a>
+                <a href="/profile/asd" className="video-channel-name" id="video-channel-name">
+                  ${video.userId}
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>${video.likes}</span>•<span>${video.views}</span>
                 </div>
+              </div>
             </div>
           </div>
-          </a>
           `;
-          document.getElementById("output").innerHTML = output;
+          document.getElementById("video-section").innerHTML = output;
         });
       })
       .catch((error) => console.log("error", error));
@@ -64,7 +83,7 @@ function Video() {
   return (
     <main>
       <NavBar />
-      <div id="output"></div>
+      <div id="video-section"></div>
     </main>
   );
 }
