@@ -1,15 +1,15 @@
 .search-input {
-  width: 93%;
+  width: 80%;
   height: 100%;
   justify-content: flex-start;
   float: left;
-  border: none;
   background: none;
+  border: none;
   color: aliceblue;
   margin-left: 2%;
 }
 .search {
-  width: 60%;
+  width: 98%;
   height: 40px;
   display: flexbox;
   background-size: cover;
@@ -18,14 +18,23 @@
   position: relative;
   border-radius: 17px;
   margin-top: 10px;
+  margin-left: 1%;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 .search-icon {
+  margin-right: 1%;
   color: aliceblue;
   height: 100%;
   cursor: pointer;
 }
-.search-input:focus {
+.search-input {
   outline: none;
+  justify-content: flex-start;
 }
 .form {
   width: 100%;
@@ -132,22 +141,10 @@ nav {
   border-radius: 30px;
 }
 .menu-hamburger {
-  opacity: 0;
   color: #fff;
 }
 @media screen and (max-width: 750px) {
-  .search-input {
-    display: none;
-  }
-  .search {
-    background-color: #33333300;
-    justify-content: flex-end;
-  }
-  .btn-container {
-    display: none;
-  }
   .menu-hamburger {
-    opacity: 1;
     color: aliceblue;
     justify-content: flex-end;
     margin-right: 2%;
@@ -180,4 +177,33 @@ nav {
     border: none;
     border-bottom: 1px #fff;
   }
+}
+.btn-container {
+  display: none;
+}
+.menu-hamburger {
+  opacity: 1;
+  color: aliceblue;
+  justify-content: flex-end;
+  margin-right: 2%;
+  margin-top: 10px;
+  height: 42px;
+  width: 42px;
+}
+.nav {
+  justify-content: space-between;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.logo {
+  justify-content: flex-start;
+  margin-left: 1%;
+}
+.derender {
+  display: none;
 }

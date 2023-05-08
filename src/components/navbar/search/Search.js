@@ -70,6 +70,13 @@ function Search() {
       .catch((error) => console.log("error", error));
   }
 
+  useEffect(() => {
+    if (location.name != "/search") {
+      deRender();
+    } else {
+      renderSearch();
+    }
+  }, []);
   function onSubmit() {
     navigate("/search");
     getSearch(text);
@@ -78,7 +85,12 @@ function Search() {
   function getData(val) {
     text = val.target.value;
   }
-
+  function deRender() {
+    document.getElementById("search").classList.add("derender");
+  }
+  function renderSearch() {
+    document.getElementById("search").classList.remove("derender");
+  }
   function handle(e) {
     if (e.key === "Enter") {
       getSearch(text);
@@ -115,71 +127,28 @@ function Search() {
     <>
       <div className="nav">
         <div className="logo">
-          <h1 className="logo">logo</h1>
+          <a href="/">
+            <h1 className="logo">logo</h1>
+          </a>
         </div>
         <div className="button-container">
-          <div className="search">
-            <form className="form" onSubmit={(event) => event.preventDefault()}>
-              <input
-                type="text"
-                placeholder="Search"
-                className="search-input "
-                onChange={getData}
-                onKeyDown={handle}
-              />
-              <FaSearch className="search-icon" onClick={navigateSearch} />
-            </form>
-          </div>
-          <div className="btn-container">
-            <button
-              onClick={() => {
-                navigate("/upload");
-              }}
-              className="upload from-left"
-            >
-              <BsFillCloudUploadFill className="inbox" />
-            </button>
-            <button
-              onClick={() => {
-                navigate("/login");
-              }}
-              className="login-btn from-left"
-            >
-              <BsFillPersonFill className="inbox" />
-            </button>
-            <button
-              onClick={() => {
-                navigate("/login");
-              }}
-              className="login-btn from-left"
-            >
-              <BsFillInboxFill className="inbox" />
-            </button>
-            <button
-              onClick={() => {
-                navigate("/login");
-              }}
-              className="login-btn from-left"
-            >
-              <BsBellFill className="inbox" />
-            </button>
-          </div>
+          <FaSearch className="search-icon" onClick={navigateSearch} />
+          <div className="btn-container"></div>
           <AiOutlineMenu className="menu-hamburger" />
         </div>
       </div>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-        }}
-      >
-        <input
-          type="text"
-          className="search-mobile-input"
-          placeholder="  Search"
-          onChange={getData}
-          onKeyDown={handle}
-        />
-      </form>
+      <div className="search" id="search">
+        <form className="form" onSubmit={(event) => event.preventDefault()}>
+          <input
+            type="text"
+            placeholder="Search"
+            className="search-input "
+            onChange={getData}
+            onKeyDown={handle}
+          />
+          <FaSearch className="search-icon" onClick={navigateSearch} />
+        </form>
+      </div>
       <div className="propic" id="propic"></div>
       <div id="output-search"></div>
     </>
