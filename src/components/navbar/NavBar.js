@@ -3,9 +3,15 @@ import Search from "./search/Search";
 import "./NavBar.css";
 import { useEffect, useState } from "react";
 import { useActionData, useNavigate } from "react-router-dom";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineHeart } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
+import {
+  BsFillPersonFill,
+  BsClipboardCheck,
+  BsHouse,
+  BsArrowRight,
+  BsClock,
+} from "react-icons/bs";
 import { getElementError } from "@testing-library/react";
 
 function NavBar() {
@@ -60,9 +66,15 @@ function NavBar() {
           <div className="flex-end">
             <div className="link-container">
               <ul>
-                <li>Home</li>
-                <li>Following</li>
-                <li>Liked</li>
+                <li>
+                  <BsHouse /> Home
+                </li>
+                <li>
+                  <BsClipboardCheck /> Following
+                </li>
+                <li>
+                  <AiOutlineHeart /> Liked
+                </li>
               </ul>
             </div>
             <div className="button-container">
@@ -71,6 +83,26 @@ function NavBar() {
               <AiOutlineMenu className="menu-hamburger" />
             </div>
           </div>
+        </div>
+        <div className="sidebar">
+          <ul>
+            <li>
+              <BsArrowRight />
+            </li>
+            <li>
+              <BsHouse /> <p className="sidebar-deactive">Home</p>
+            </li>
+            <li>
+              <BsClipboardCheck />
+              <p className="sidebar-deactive">Following</p>
+            </li>
+            <li>
+              <AiOutlineHeart /> <p className="sidebar-deactive">Like</p>
+            </li>
+            <li>
+              <BsClock />
+            </li>
+          </ul>
         </div>
       </div>
     </>
