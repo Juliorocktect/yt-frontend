@@ -13,3 +13,53 @@
 .upload {
   top: 2%;
 }
+.Navlogo {
+  height: 64px;
+  width: 64px;
+  justify-content: flex-start;
+}
+.Navlogo img {
+  width: 100%;
+  height: 100%;
+  image-rendering: auto;
+}
+.nav {
+  background: rgba(58, 58, 58, 0.64);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.5px);
+  -webkit-backdrop-filter: blur(11.5px);
+  border: 1px solid rgba(58, 58, 58, 1);
+  position: sticky;
+  position: -webkit-sticky;
+  width: 100%;
+  justify-content: space-between;
+}
+.link-container ul {
+  display: flex;
+}
+.link-container ul li {
+  display: inline;
+  margin-right: 10px;
+  list-style: none;
+  color: aliceblue;
+  cursor: pointer;
+}
+.flex-end {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+}
+@media screen and (max-width: 750px) {
+  .link-container {
+    display: none;
+  }
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  transition: 1s ease-in;
+}

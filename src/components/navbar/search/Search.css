@@ -29,7 +29,8 @@
 .search-icon {
   margin-right: 1%;
   color: aliceblue;
-  height: 100%;
+  height: 22px;
+  width: 22px;
   cursor: pointer;
 }
 .search-input {
@@ -147,8 +148,6 @@ nav {
   .menu-hamburger {
     color: aliceblue;
     justify-content: flex-end;
-    margin-right: 2%;
-    margin-top: 10px;
     height: 42px;
     width: 42px;
   }
@@ -185,25 +184,25 @@ nav {
   opacity: 1;
   color: aliceblue;
   justify-content: flex-end;
-  margin-right: 2%;
-  margin-top: 10px;
-  height: 42px;
-  width: 42px;
-}
-.nav {
-  justify-content: space-between;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
 }
 .button-container {
   display: flex;
   flex-direction: row;
-  width: 30%;
-  align-items: flex-end;
+  width: 10%;
   justify-content: flex-end;
+  align-items: center;
 }
 .logo {
   justify-content: flex-start;
   margin-left: 1%;
 }
-.derender {
-  display: none;
+#output-search {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem 1rem;
+  padding: 3rem 0;
+  margin: 0 1.5rem;
 }

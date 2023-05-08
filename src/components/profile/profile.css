@@ -80,7 +80,6 @@
 ul {
   display: flex;
   width: 30%;
-  overflow: hidden;
 }
 .naviagtion-container {
   width: 100%;

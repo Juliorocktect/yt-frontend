@@ -9,6 +9,7 @@ import {
 import { AiOutlineMenu } from "react-icons/ai";
 import "./Search.css";
 import { useNavigate, useLocation } from "react-router-dom";
+import NavBar from "../NavBar";
 
 function Search() {
   let sui = "";
@@ -41,28 +42,47 @@ function Search() {
       .then((result) => {
         console.log(result);
         setSearchResult(result);
-        if (searchResult[0] == null) {
-          alert("No search results");
+        if (searchResult.length === 0) {
+          console.log("no value present");
         }
         result.forEach(function (video) {
           sui += `
-          <a href="/player/${video.id}"> 
-            <div id="component">
-            <div id="pic">
-              <img id="pic" src="${video.thumbnailUrl}" alt="thumbnail-preview" className="preview" />
-            </div>
-            <div id="bottom">
-              <div id="profielpic">
-                <img  src="${profilePic}" alt="pic" id='profile-pic'/>
-                <img  src="${profilePic}" alt="pic" id='mask' />
+          <div className="video-container" id="video-container">
+          <a href="/player/${video.id}" id="thumbnail" data-duration="${video.likes}">
+            <img
+              src="${video.thumbnailUrl}"
+              alt=""
+              className="thumbnail-image"
+              id="thumbnail-image"
+            />
+          </a>
+          <div className="video-bottom-section" id="video-bottom-section">
+            <a href="/profile/${video.userId}">
+              <img
+                src="${profilePic}"
+                alt=""
+                className="channel-icon"
+                id="channel-icon"
+              />
+              <img
+                src="${profilePic}"
+                id="mask"
+                alt=""
+              />
+            </a>
+            <div className="video-details" id="video-details">
+              <a href="/player/asd" className="video-title" id="video-title">
+                ${video.title}
+              </a>
+              <a href="/profile/asd" className="video-channel-name" id="video-channel-name">
+                ${video.userId}
+              </a>
+              <div className="video-metadata" id="video-metadata">
+                <span>${video.likes}</span>•<span>${video.views}</span>
               </div>
-                <div id='content' onClick={navigateToPlayer(${video.id})}>
-                  <h1>${video.title}</h1>
-                  <p>${video.description}</p>
-                </div>
             </div>
           </div>
-          </a>
+        </div>
           `;
         });
         document.getElementById("output-search").innerHTML = sui;
@@ -70,13 +90,6 @@ function Search() {
       .catch((error) => console.log("error", error));
   }
 
-  useEffect(() => {
-    if (location.name != "/search") {
-      deRender();
-    } else {
-      renderSearch();
-    }
-  }, []);
   function onSubmit() {
     navigate("/search");
     getSearch(text);
@@ -94,9 +107,6 @@ function Search() {
   function handle(e) {
     if (e.key === "Enter") {
       getSearch(text);
-      if (location.pathname != "/search") {
-        navigate("/search");
-      }
     }
     return false;
   }
@@ -125,18 +135,7 @@ function Search() {
   }
   return (
     <>
-      <div className="nav">
-        <div className="logo">
-          <a href="/">
-            <h1 className="logo">logo</h1>
-          </a>
-        </div>
-        <div className="button-container">
-          <FaSearch className="search-icon" onClick={navigateSearch} />
-          <div className="btn-container"></div>
-          <AiOutlineMenu className="menu-hamburger" />
-        </div>
-      </div>
+      <NavBar></NavBar>
       <div className="search" id="search">
         <form className="form" onSubmit={(event) => event.preventDefault()}>
           <input
@@ -146,7 +145,6 @@ function Search() {
             onChange={getData}
             onKeyDown={handle}
           />
-          <FaSearch className="search-icon" onClick={navigateSearch} />
         </form>
       </div>
       <div className="propic" id="propic"></div>

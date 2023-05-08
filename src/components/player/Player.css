@@ -116,3 +116,13 @@ img {
 }
 @media screen and (max-width: 1800px) {
 }
+.recomandation-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem 1rem;
+  padding: 3rem 0;
+  margin: 0 1.5rem;
+}
+#vid {
+  margin: 0;
+}

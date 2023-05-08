@@ -106,133 +106,485 @@ function Player() {
           </div>
         </div>
         <div className="recomandation-section">
-          <div className="video-element">
-            <a href="/player/asd">
-              <div id="component">
-                <div id="pic">
-                  <img
-                    id="pic"
-                    src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
-                    alt="thumbnail-preview"
-                    className="preview"
-                  />
-                </div>
-                <div id="bottom">
-                  <div id="profielpic">
-                    <img
-                      src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
-                      alt="pic"
-                      id="profile-pic"
-                    />
-                    <img
-                      src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
-                      alt="pic"
-                      id="mask"
-                    />
-                  </div>
-                  <div id="content">
-                    <h1>Titel</h1>
-                    <p>Beschreibung</p>
-                  </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
-          <div className="video-element">
-            <a href="/player/asd">
-              <div id="component">
-                <div id="pic">
-                  <img
-                    id="pic"
-                    src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
-                    alt="thumbnail-preview"
-                    className="preview"
-                  />
-                </div>
-                <div id="bottom">
-                  <div id="profielpic">
-                    <img
-                      src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
-                      alt="pic"
-                      id="profile-pic"
-                    />
-                    <img
-                      src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
-                      alt="pic"
-                      id="mask"
-                    />
-                  </div>
-                  <div id="content">
-                    <h1>Titel</h1>
-                    <p>Beschreibung</p>
-                  </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
-          <div className="video-element">
-            <a href="/player/asd">
-              <div id="component">
-                <div id="pic">
-                  <img
-                    id="pic"
-                    src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
-                    alt="thumbnail-preview"
-                    className="preview"
-                  />
-                </div>
-                <div id="bottom">
-                  <div id="profielpic">
-                    <img
-                      src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
-                      alt="pic"
-                      id="profile-pic"
-                    />
-                    <img
-                      src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
-                      alt="pic"
-                      id="mask"
-                    />
-                  </div>
-                  <div id="content">
-                    <h1>Titel</h1>
-                    <p>Beschreibung</p>
-                  </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
-          <div className="video-element">
-            <a href="/player/asd">
-              <div id="component">
-                <div id="pic">
-                  <img
-                    id="pic"
-                    src="http://localhost/landscape-mountain-snow-winter-mountain-range-weather-snowy-skiing-season-winter-sport-sports-alps-canada-ski-wintry-piste-winter-mood-snow-landscape-ski-touring-nordic-skiing-ski-mountaineering-ski-equipment-mount.jpg"
-                    alt="thumbnail-preview"
-                    className="preview"
-                  />
-                </div>
-                <div id="bottom">
-                  <div id="profielpic">
-                    <img
-                      src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
-                      alt="pic"
-                      id="profile-pic"
-                    />
-                    <img
-                      src="http://localhost/koenigssee-st.-bartholomews-church-istock_25714100_xlarge-2.jpg"
-                      alt="pic"
-                      id="mask"
-                    />
-                  </div>
-                  <div id="content">
-                    <h1>Titel</h1>
-                    <p>sas</p>
-                  </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
             </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="video-container" id="video-container">
+            <a href="/player/${video.id}" id="thumbnail" data-duration="12:40">
+              <img
+                src="http://localhost/canyon_overlook_zion_landscape_black_and_white-wallpaper-3840x2400.jpg"
+                alt=""
+                className="thumbnail-image"
+                id="thumbnail-image"
+              />
+            </a>
+            <div className="video-bottom-section" id="video-bottom-section">
+              <a href="/profile/${video.userId}">
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  alt=""
+                  className="channel-icon"
+                  id="channel-icon"
+                />
+                <img
+                  src="http://localhost/image__Sigurd_Treske_wueste_namibia_namib.jpg"
+                  id="mask"
+                  alt=""
+                />
+              </a>
+              <div className="video-details" id="video-details">
+                <a href="/player/asd" className="video-title" id="video-title">
+                  SsIooO
+                </a>
+                <a
+                  href="/profile/asd"
+                  className="video-channel-name"
+                  id="video-channel-name"
+                >
+                  sio
+                </a>
+                <div className="video-metadata" id="video-metadata">
+                  <span>asd</span>•<span>1 week ago</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
