@@ -11,6 +11,7 @@ import {
   BsHouse,
   BsArrowRight,
   BsClock,
+  BsBookmarks,
 } from "react-icons/bs";
 import { getElementError } from "@testing-library/react";
 
@@ -19,6 +20,7 @@ function NavBar() {
   const navigate = useNavigate();
   const [isPicAvailable, setIsAvailable] = useState("false");
   const [fix, setFix] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
 
   function setFixed() {
     if (window.scrollY >= 64) {
@@ -52,7 +54,28 @@ function NavBar() {
     navigate("/search");
   }
 
-  function collapseMenu() {}
+  function expandSideBar() {
+    var sidebar = document.getElementById("sidebar");
+    var rest = document.getElementById("invisible");
+    rest.classList.add("invisible-sidebar-active");
+    sidebar.classList.add("sidebar-active");
+    setSidebar(true);
+  }
+  if (sidebar) {
+    const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+    const decrease = async () => {
+      await delay(1500);
+      console.log("executed");
+      decreaseSideBar();
+    };
+  }
+  function decreaseSideBar() {
+    var sidebar = document.getElementById("sidebar");
+    sidebar.classList.remove("sidebar-active");
+    var rest = document.getElementById("invisible");
+    rest.classList.remove("invisible-sidebar-active");
+    setSidebar(false);
+  }
 
   return (
     <>
@@ -64,19 +87,6 @@ function NavBar() {
             </a>
           </div>
           <div className="flex-end">
-            <div className="link-container">
-              <ul>
-                <li>
-                  <BsHouse /> Home
-                </li>
-                <li>
-                  <BsClipboardCheck /> Following
-                </li>
-                <li>
-                  <AiOutlineHeart /> Liked
-                </li>
-              </ul>
-            </div>
             <div className="button-container">
               <FaSearch className="search-icon" onClick={navigateSearch} />
               <BsFillPersonFill className="search-icon" />
@@ -84,23 +94,35 @@ function NavBar() {
             </div>
           </div>
         </div>
-        <div className="sidebar">
+        <div
+          className="invisible-sidebar"
+          id="invisible"
+          onClick={decreaseSideBar}
+        ></div>
+        <div className="sidebar" id="sidebar">
+          <div className="arrow-container">
+            <BsArrowRight className="arrow" onClick={expandSideBar} />
+          </div>
           <ul>
             <li>
-              <BsArrowRight />
-            </li>
-            <li>
-              <BsHouse /> <p className="sidebar-deactive">Home</p>
+              <BsHouse className="sidebar-icon" />{" "}
+              <p className="sidebar-deactive sidebar-text">Home</p>
             </li>
             <li>
               <BsClipboardCheck />
-              <p className="sidebar-deactive">Following</p>
+              <p className="sidebar-deactive sidebar-text">Following</p>
             </li>
             <li>
-              <AiOutlineHeart /> <p className="sidebar-deactive">Like</p>
+              <BsBookmarks />
+              <p className="sidebar-deactive sidebar-text">Saved</p>
+            </li>
+            <li>
+              <AiOutlineHeart />{" "}
+              <p className="sidebar-deactive sidebar-text">Like</p>
             </li>
             <li>
               <BsClock />
+              <p className="sidebar-deactive sidebar-text">History</p>
             </li>
           </ul>
         </div>
