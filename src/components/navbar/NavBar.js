@@ -12,6 +12,7 @@ import {
   BsArrowRight,
   BsClock,
   BsBookmarks,
+  BsHeart,
 } from "react-icons/bs";
 import { getElementError } from "@testing-library/react";
 
@@ -93,6 +94,31 @@ function NavBar() {
               <AiOutlineMenu className="menu-hamburger" />
             </div>
           </div>
+        </div>
+        <div className="nav-mobile-menu">
+          <ul>
+            <li>
+              <BsHouse className="mobile-icon" />
+              <h1>Home</h1>
+            </li>
+            <li>
+              <BsClipboardCheck className="mobile-icon" />
+              <h1>Following</h1>
+            </li>
+
+            <li>
+              <BsBookmarks className="mobile-icon" />
+              <h1>Saved</h1>
+            </li>
+            <li>
+              <AiOutlineHeart className="mobile-icon" />
+              <h1>liked</h1>
+            </li>
+            <li>
+              <BsClock className="mobile-icon" />
+              <h1>History</h1>
+            </li>
+          </ul>
         </div>
         <div
           className="invisible-sidebar"

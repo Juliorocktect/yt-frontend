@@ -35,9 +35,7 @@ function Player() {
         document.getElementById("video-title").innerHTML = video.title;
       })
       .catch((error) => console.log("error", error));
-    for (let i = 0; i > 26; i++) {
-      console.log(comments[i]);
-    }
+      
 
     fetch(
       "http://localhost:8080/user/getProfilePicture/642470a2e5b043025ec8676d",

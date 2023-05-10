@@ -83,7 +83,7 @@ function Video() {
   return (
     <main>
       <NavBar />
-      <div id="video-section"></div>
+      <div id="video-section" className="video-section"></div>
     </main>
   );
 }

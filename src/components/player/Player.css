@@ -13,7 +13,6 @@
 }
 .like-icon {
   color: #ff5454;
-  margin-top: 50%;
 }
 .profile-pic {
   width: 100%;
@@ -38,14 +37,16 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 4%;
-  width: 70%;
 }
 .container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 .title-container-container {
   justify-content: flex-start;
+  display: flex;
+  align-items: center;
 }
 .body {
   width: 100%;
@@ -54,12 +55,12 @@
 .likes {
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
 }
 .UserContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 70%;
   margin-top: 2%;
 }
 #profile-picture {
@@ -69,6 +70,8 @@
 }
 .recomandation-section {
   margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
   justify-content: flex-end;
   display: flex;
   flex-direction: row;
@@ -99,7 +102,7 @@ img {
 }
 @media screen and (max-width: 1000px) {
   .recomandation-section {
-    width: 100%;
+    width: 90%;
     justify-content: center;
   }
   .containerOfRecomandations {
@@ -108,7 +111,6 @@ img {
   }
   #player {
     width: 100%;
-    margin-top: 1%;
   }
   #vid {
     margin: 0;
@@ -125,4 +127,9 @@ img {
 }
 #vid {
   margin: 0;
+}
+.views {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
