@@ -176,19 +176,26 @@
   height: 70vh;
   display: flex;
 }
+.nav-mobile-menu-disabled {
+  display: none;
+  transition: all 0.4s ease-in-out;
+}
 .nav-mobile-menu ul {
   flex-direction: column;
   list-style: none;
   color: #fff;
   justify-content: space-around;
   width: 90%;
+  padding-right: 10%;
 }
 .nav-mobile-menu ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  border-bottom: 1px solid #444444;
+  padding-bottom: 20px;
 }
 .mobile-icon {
   width: 47px;

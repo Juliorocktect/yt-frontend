@@ -77,6 +77,16 @@ function NavBar() {
     rest.classList.remove("invisible-sidebar-active");
     setSidebar(false);
   }
+  function expandMobileMenu() {
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (mobileMenu.classList.contains("nav-mobile-menu-disabled")) {
+      mobileMenu.classList.add("nav-mobile-menu");
+      mobileMenu.classList.remove("nav-mobile-menu-disabled");
+    } else {
+      mobileMenu.classList.add("nav-mobile-menu-disabled");
+      mobileMenu.classList.remove("nav-mobile-menu");
+    }
+  }
 
   return (
     <>
@@ -91,11 +101,14 @@ function NavBar() {
             <div className="button-container">
               <FaSearch className="search-icon" onClick={navigateSearch} />
               <BsFillPersonFill className="search-icon" />
-              <AiOutlineMenu className="menu-hamburger" />
+              <AiOutlineMenu
+                className="menu-hamburger"
+                onClick={expandMobileMenu}
+              />
             </div>
           </div>
         </div>
-        <div className="nav-mobile-menu">
+        <div className="nav-mobile-menu-disabled" id="mobile-menu">
           <ul>
             <li>
               <BsHouse className="mobile-icon" />

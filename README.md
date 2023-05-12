@@ -2,9 +2,9 @@
 - To install dependencies `npm install`
 - start dev server > `npm start`
 ## TODO: 
-- [ ] Responsive Navbar
+- [x] Responsive Navbar
 - [ ] Style videoPlayer
-- [ ] style videoPlayerDetails 
+- [x] style videoPlayerDetails 
 - [ ] implement recomandations and comment section  
 
 # Images
