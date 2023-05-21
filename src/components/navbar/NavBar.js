@@ -58,8 +58,10 @@ function NavBar() {
   function expandSideBar() {
     var sidebar = document.getElementById("sidebar");
     var rest = document.getElementById("invisible");
+    var arrow = document.getElementById("arrow-container");
     rest.classList.add("invisible-sidebar-active");
     sidebar.classList.add("sidebar-active");
+    arrow.classList.add("disabled");
     setSidebar(true);
   }
   if (sidebar) {
@@ -101,10 +103,12 @@ function NavBar() {
             <div className="button-container">
               <FaSearch className="search-icon" onClick={navigateSearch} />
               <BsFillPersonFill className="search-icon" />
-              <AiOutlineMenu
-                className="menu-hamburger"
-                onClick={expandMobileMenu}
-              />
+              <input type="checkbox" id="checkbox" onClick={expandMobileMenu} />
+              <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+              </label>
             </div>
           </div>
         </div>
@@ -139,7 +143,7 @@ function NavBar() {
           onClick={decreaseSideBar}
         ></div>
         <div className="sidebar" id="sidebar">
-          <div className="arrow-container">
+          <div className="arrow-container" id="arrow-container">
             <BsArrowRight className="arrow" onClick={expandSideBar} />
           </div>
           <ul>
