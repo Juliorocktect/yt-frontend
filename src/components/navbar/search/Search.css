@@ -9,16 +9,16 @@
   margin-left: 2%;
 }
 .search {
-  width: 98%;
+  width: 70%;
   height: 40px;
   display: flexbox;
   background-size: cover;
   background-color: #14161a;
   align-items: center;
-  position: relative;
+  position: absolute;
   border-radius: 17px;
   margin-top: 10px;
-  margin-left: 1%;
+  margin-left: 5%;
 }
 .form {
   display: flex;
@@ -41,7 +41,7 @@
   width: 100%;
   height: 100%;
 }
-#output-search {
+.output-search {
   margin-top: 2%;
   width: 100%;
   height: auto;

@@ -74,9 +74,11 @@ function NavBar() {
   }
   function decreaseSideBar() {
     var sidebar = document.getElementById("sidebar");
+    var arrow = document.getElementById("arrow-container");
     sidebar.classList.remove("sidebar-active");
     var rest = document.getElementById("invisible");
     rest.classList.remove("invisible-sidebar-active");
+    arrow.classList.remove("disabled");
     setSidebar(false);
   }
   function expandMobileMenu() {

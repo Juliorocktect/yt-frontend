@@ -148,7 +148,7 @@ function Search() {
         </form>
       </div>
       <div className="propic" id="propic"></div>
-      <div id="output-search"></div>
+      <div id="output-search" className="+video-section"></div>
     </>
   );
 }
