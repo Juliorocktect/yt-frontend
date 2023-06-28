@@ -8,11 +8,13 @@ import { Routes, Route } from "react-router-dom";
 import Search from "./components/navbar/search/Search";
 import Upload from "./components/upload/Upload";
 import Profile from "./components/profile/Profile";
+import Slider from "./components/slider/Slider";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="/slider" element={<Slider />}></Route>
         <Route path="/layout" element={<Layout />}></Route>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>

@@ -1,0 +1,35 @@
+.img-slider-container {
+  width: 80%;
+  height: 50vh;
+}
+.image-slider {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.slider-button {
+  outline: none;
+  background: none;
+  color: aliceblue;
+  border: none;
+  transition: all 0.4s ease-in-out;
+}
+.slider-arrow {
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+}
+.disabled {
+  display: none;
+}
+.slider {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5%;
+}
+.slider-button:hover {
+  transform: scale(1.4);
+}
