@@ -3,12 +3,15 @@
   height: 50vh;
 }
 .image-slider {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  width: 80%;
+  height: 50vh;
   border-radius: 25px;
   transition: all 0.3s ease-in-out;
+  z-index: 0;
 }
 .slider-button {
+  z-index: 1;
   outline: none;
   background: none;
   color: aliceblue;
@@ -32,4 +35,18 @@
 }
 .slider-button:hover {
   transform: scale(1.4);
+}
+.left{
+  position: absolute;
+  width: 80%;
+  height: 50vh;
+  margin-left: -85%;
+  z-index: -2;
+}
+.right{
+  position: absolute;
+  width: 80%;
+  height: 50vh;
+  margin-left: 85%;
+  z-index: -1;
 }
